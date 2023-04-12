@@ -11,11 +11,11 @@ export class CapitalComponent {
   error : boolean = false;
   public paises : Paises[] = [];
 
-  constructor( private _servicePais : PaisesService){}
+  constructor( private paisService : PaisesService){}
 
   buscar( termino : string){
     this.error = false;
-    this._servicePais.buscarCapital(termino).subscribe(resp =>{
+    this.paisService.buscarCapital(termino).subscribe(resp =>{
       console.log(resp);
       this.paises = resp;
     },(err)=>{
